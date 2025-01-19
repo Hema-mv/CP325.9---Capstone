@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import AuthPage from "./pages/AuthPage";
+import { useState } from "react";
 import HomePage from './Pages/HomePage';
 import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
@@ -8,7 +10,11 @@ import NavBar from './Components/NavBar';
 import './Styles/app.css';
 
 const App = () => {
+  const [user, setUser] = useState("");
   return (
+    <>
+       {user ? (
+          <>
     <div>
       <NavBar />
       <Routes>
@@ -19,6 +25,13 @@ const App = () => {
         <Route path="/product" element={<ProductPage />} />
       </Routes>
     </div>
+     </>
+    ) 
+    : (
+      <AuthPage setUser={setUser} />
+    )
+    }
+    </>
   );
 };
 

@@ -106,6 +106,7 @@ export const updateProduct = async (id, productData) => {
 // Delete a product by ID
 export const deleteProduct = async (id) => {
   try {
+    console.log("in delete product api",id)
     const response = await fetch(`${BASE_URL}/products/${id}`, {
       method: 'DELETE',
     });

@@ -1,9 +1,10 @@
-import { getProducts, getProductById, getCategories, createProduct, getProductsByCategory, updateProduct } from './product-api';
+import { getProducts, getProductById, getCategories, createProduct, getProductsByCategory, updateProduct,deleteProduct } from './product-api';
 
 // Fetch all products
 export const fetchAllProducts = async () => {
   try {
     const products = await getProducts();
+    console.log('products:', products);
     return products;
   } catch (error) {
     console.error('Error in fetchAllProducts:', error);

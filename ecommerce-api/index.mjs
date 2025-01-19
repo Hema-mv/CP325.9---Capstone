@@ -4,8 +4,10 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 
+
 import productRoutes from './routes/productRoutes.mjs';
 import authRoutes from './routes/authRoutes.mjs';
+import users from './routes/user.mjs';
 
 dotenv.config();
 const PORT = process.env.PORT || 5050;
@@ -16,6 +18,7 @@ app.use(express.json());
 
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/users', users);
 // const customLogger = (tokens, req, res) => {
 //   // Example: Only log requests with status code 4xx or 5xx
 //   const status = tokens.status(req, res);
@@ -45,7 +48,7 @@ app.get("/*", (req, res) => {
   
   app.get("/", (req, res) => {
     res.send(
-      "<h1>Calender API</h1><ol>endpoints: <br/><li> brain dump - /api/braindump</li> <li> entries - /api/calendar</li> <li> todos - /api/todos</li> <ol>"
+      "<h1>You are in Ecommerce-Api</li> <li> entries - /api/calendar</li> <li> todos - /api/todos</li> <ol>"
     );
   });
 

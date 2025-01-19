@@ -14,11 +14,11 @@ async function  getAllProducts(req, res)
 
 async function  createProduct(req, res) 
  {
-  const { name, price, description, category, stock } = req.body;
+  const { name, price, description, category, stock ,image } = req.body;
   console.log('req.body:test', req.body);
   console.log('req.body:params', req.params);
   try {
-    const newProduct = new Product({ name, price, description, category, stock });
+    const newProduct = new Product({ name, price, description, category, stock ,image});
     await newProduct.save();
     res.status(201).json(newProduct);
   } catch (error) {
@@ -53,6 +53,7 @@ async function  updateProduct(req, res)
     product.description = description || product.description;
     product.category = category || product.category;
     product.stock = stock || product.stock;
+product.image=image||product.image;
 
     await product.save();
     res.json(product);
@@ -69,7 +70,8 @@ async function  deleteProduct(req, res)
       return res.status(404).json({ message: 'Product not found' });
     }
 
-    await product.remove();
+    
+    await product.deleteOne();
     res.json({ message: 'Product removed' });
   } catch (error) {
     res.status(500).json({ error: error.message });
