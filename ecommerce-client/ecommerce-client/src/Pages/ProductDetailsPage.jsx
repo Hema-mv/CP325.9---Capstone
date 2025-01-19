@@ -9,7 +9,7 @@ import {
 } from "../Utilities/product-Service";
 import "../Styles/product.css";
 
-const ProductPage = () => {
+const ProductDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditMode = Boolean(id);
@@ -88,87 +88,14 @@ const ProductPage = () => {
   return (
     <div className="productpage">
       <h1>{isEditMode ? "Edit Product" : "Create New Product"}</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="price">Price:</label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="category">Category:</label>
-          <input
-            type="text"
-            id="category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="stock">Stock:</label>
-          <input
-            type="number"
-            id="stock"
-            name="stock"
-            value={formData.stock}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Image URL:</label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            value={formData.image}
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          {isEditMode ? "Update Product" : "Create Product"}
-        </button>
+      <form >
+        
         {isEditMode && (
           <button type="button" onClick={() => handleDelete(id)}>
             Delete Product
           </button>
         )}
-         <h2>Product List</h2>
+          <h2>Product List</h2>
       <Link to="/product">Add New Product</Link>
       <ul>
         {products.map((product) => (
@@ -186,9 +113,9 @@ const ProductPage = () => {
       </ul>
       </form>
 
-     
+    
     </div>
   );
 };
 
-export default ProductPage;
+export default ProductDetailsPage;

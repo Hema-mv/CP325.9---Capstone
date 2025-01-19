@@ -59,7 +59,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <h1 className="homepagetitle">Home Page</h1>
+      <h1 className="homepagetitle">New line Clothing</h1><br/>
       <ul className="homepagelist">
         {products.map((product) => (
           <li key={product._id} className="homepage__item">

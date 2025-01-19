@@ -41,7 +41,7 @@ async function  getProductById(req, res)
 
 async function  updateProduct(req, res) 
  {
-  const { name, price, description, category, stock } = req.body;
+  const { name, price, description, category, stock,image } = req.body;
   try {
     const product = await Product.findById(req.params.id);
     if (!product) {

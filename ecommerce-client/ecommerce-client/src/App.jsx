@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage';
 import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
 import ProductPage from './Pages/ProductPage';
+import ProductDetailsPage from './Pages/ProductDetailsPage';
 import NavBar from './Components/NavBar';
 import './Styles/app.css';
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/productlist" element={<ProductDetailsPage />} />
       </Routes>
     </div>
      </>
