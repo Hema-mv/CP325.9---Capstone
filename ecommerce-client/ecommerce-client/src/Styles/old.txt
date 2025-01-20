@@ -1,0 +1,81 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center; 
+ display: block;
+  background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGVjb21tZXJjZXxlbnwwfHx8fDE2MzY3NjY2NzA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+}
+
+.homepage {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.homepagetitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.homepagelist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.homepageitem {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 calc(20% - 2rem); /* 5 items per row */
+}
+
+.homepageitem:hover {
+  background-color: #e9e9e9;
+}
+.homepage-image {
+  width: 100%;
+  height: auto;
+  max-width: 200px; /* Adjust as needed */
+  display: block;
+  margin: 0 auto;
+}
+
+.homepage-image {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.homepageitem-details {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.homepageitem-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.homepageitem-description {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.homepageitem-price {
+  font-size: 1.2rem;
+  color: #000;
+}
